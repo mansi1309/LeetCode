@@ -1,0 +1,3 @@
+->Create a frequency map (HashMap or unordered_map) to count character frequencies.
+->Iterate through each character in the string.
+->Increment the count of each character in the frequency map.
