@@ -1,0 +1,4 @@
+Input: s = "iloveleetcode", words = ["i","love","leetcode","apples"]
+Output: true
+Explanation:
+s can be made by concatenating "i", "love", and "leetcode" together.
