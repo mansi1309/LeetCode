@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int numberOfChild(int n, int k) {
+       
+       int i=0;
+       bool vis=false;
+       while(k>0)
+       {
+        if(i==0)
+        {
+            vis=false;
+        }
+        else if(i==n-1)
+        {
+            vis=true;
+        }
+        if(vis==false)
+        {
+            i++;
+        }
+        else
+        {
+            i--;
+        }
+        k--;
+     } 
+       return i;
+    }
+};
