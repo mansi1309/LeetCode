@@ -1,29 +1,16 @@
-class Solution {
-public:
-    int numberOfChild(int n, int k) {
-       
-       int i=0;
-       bool vis=false;
-       while(k>0)
-       {
-        if(i==0)
-        {
-            vis=false;
-        }
-        else if(i==n-1)
-        {
-            vis=true;
-        }
-        if(vis==false)
-        {
-            i++;
-        }
-        else
-        {
-            i--;
-        }
-        k--;
-     } 
-       return i;
-    }
-};
+class Solution:
+    def numberOfChild(self, n: int, k: int) -> int:
+        f=0
+        i=0
+        while True:
+            if k==0:
+                return i
+            if f==0:
+                i+=1
+                if i==n-1:
+                    f=1
+            elif f==1:
+                i-=1
+                if i==0:
+                    f=0
+            k-=1
