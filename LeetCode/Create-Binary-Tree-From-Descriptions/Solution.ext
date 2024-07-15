@@ -1,0 +1,14 @@
+if (!seen[x]) {
+    node[x] = new TreeNode(x);
+    seen[x] = 1;
+    if (parent[x] == 0) root = x;
+}
+if (!seen[y]) {
+    node[y] = new TreeNode(y);
+    seen[y] = 1;
+}
+parent[y] = x;// set parent for y
+if (l)
+    node[x]->left = node[y];// left child
+else
+    node[x]->right = node[y];//right child
