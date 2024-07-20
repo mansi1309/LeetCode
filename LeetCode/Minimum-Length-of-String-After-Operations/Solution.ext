@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int minimumLength(string s) {
+        if(s.size()<=2)
+        return s.size();
+
+        // track to no of chars in map having greater then 3
+        unordered_map<char,int>mp;
+        for(int i=0;i<s.size();i++){
+            mp[s[i]]++;
+        }
+        int ans=0;
+       for(auto ch:mp){
+           if(ch.second%2==0)
+           ans=ans+2;
+           else
+           ans=ans+1;
+
+       }
+       return ans;
+        
+    }
+};
