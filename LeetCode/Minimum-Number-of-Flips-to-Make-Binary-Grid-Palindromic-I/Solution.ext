@@ -1,0 +1,67 @@
+class Solution {
+public:
+    int minFlips(vector<vector<int>>& grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        int j1, j2;
+
+        int rowflips = 0, colflips = 0;
+
+        int mid = m/2;
+        if(mid == 0) return 0;
+        if(m%2 == 0)
+        {
+            j1 = mid-1;
+            j2 = mid;
+        }
+        else
+        {
+            j1 = mid-1;
+            j2 = mid+1;
+        }
+        int t1,t2;
+        for(int i = 0; i < n; i++)
+        {
+            t1 = j1;
+            t2 = j2;
+            while(t1 >= 0 && t2 < m)
+            {
+                if(grid[i][t1] != grid[i][t2])
+                {
+                    rowflips++;
+                }
+                t1--;
+                t2++;
+            }
+        }
+
+        mid = n/2;
+        if(mid == 0) return 0;
+        if(n%2 == 0)
+        {
+            j1 = mid-1;
+            j2 = mid;
+        }
+        else
+        {
+            j1 = mid-1;
+            j2 = mid+1;
+        }
+        //int t1,t2;
+        for(int i = 0; i < m; i++)
+        {
+            t1 = j1;
+            t2 = j2;
+            while(t1 >= 0 && t2 < n)
+            {
+                if(grid[t1][i] != grid[t2][i])
+                {
+                    colflips++;
+                }
+                t1--;
+                t2++;
+            }
+        }
+        return min(rowflips, colflips);
+    }
+};
